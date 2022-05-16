@@ -1,12 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import App from "./App";
 
-const Slider = ({ images }) => {
-  const eachImg = images.map((photo) => {
-    return <img src={`${photo}.image`} width="250" height="300" />;
+const Slider = ({ photos }) => {
+  const [selector, setSelector] = useState("");
+
+  const onClickPrevious = () => {
+    setSelector(selector + 1);
+  };
+
+  const onClickNext = () => {
+    setSelector(selector - 1);
+  };
+
+  const eachImg = photos.map((photo) => {
+    return (
+      <img
+        key={`${photo}.id`}
+        src={`${photo}.image`}
+        width="250"
+        height="300"
+      />
+    );
   });
 
-  return <div>{eachImg}</div>;
+  return (
+    <div>
+      <div>{eachImg}</div>
+      <button onClick={onClickPrevious}>&larr; Previous</button>
+      <button onClick={onClickNext}>&rarr; Next</button>
+    </div>
+  );
 };
 export default Slider;
 
