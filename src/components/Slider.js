@@ -25,13 +25,19 @@ const Slider = ({ photos }) => {
   });
 
   return (
-    <div>
-      <div>{eachImg}</div>
+    <div className="container">
       {selector > 1 ? (
-        <button onClick={onClickPrevious}>&larr; Previous</button>
+        <button className="btn" onClick={onClickPrevious}>
+          &larr;
+        </button>
       ) : null}
+
+      {eachImg}
+
       {selector < photos.length ? (
-        <button onClick={onClickNext}>&rarr; Next</button>
+        <button className="btn" onClick={onClickNext}>
+          &rarr;
+        </button>
       ) : null}
     </div>
   );

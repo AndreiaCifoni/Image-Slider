@@ -1,3 +1,21 @@
+.container {
+  width: 500px;
+  height: 500px;
+  background-color: rgb(243, 157, 157);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .img {
   width: 250px;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.btn {
+  color: white;
+  border: 1px solid white;
+  background-color: rgb(226, 8, 77);
+  border-radius: 80%;
 }
